@@ -4,7 +4,7 @@ import zxcvbn from 'zxcvbn';
 
 export interface PasswordAnalysis {
 	isValid: boolean;
-	score: 0 | 1 | 2 | 3 | 4;
+	score: number;
 	errors: Array<{
 		code: ERRORS;
 		message: string;
@@ -48,9 +48,9 @@ export function analyzePassword(
 		};
 	});
 	return {
-		score: zx.score,
 		crack_time: zx.crack_times_display.online_no_throttling_10_per_second as string,
 		strength: zx.score > 3 ? 'strong' : zx.score > 2 ? 'medium' : 'weak',
+		score: zx.score * 25,
 		errors,
 		suggestions: [...zx.feedback.suggestions, ...validation.suggestions],
 		isValid: validation.isValid,
