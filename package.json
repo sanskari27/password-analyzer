@@ -1,6 +1,6 @@
 {
-  "name": "password-analyzer",
-  "version": "0.0.2",
+  "name": "sanskari27-password-analyzer",
+  "version": "0.0.3",
   "description": "A library to analyze password strength",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,7 +26,6 @@
   "devDependencies": {
     "@types/node": "^22.13.4",
     "@types/zxcvbn": "^4.4.5",
-    "cpy-cli": "^5.0.0",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.4.0",
